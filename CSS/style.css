@@ -1,0 +1,298 @@
+/* Start Variables */
+
+:root {
+    --p-color: hsl(201, 11%, 66%);
+    --main-color: hsl(210, 10%, 33%);
+    --cont-width-main: 620px;
+}
+
+/* End Variables */
+
+/* Start General Rules */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: var(--main-color);
+}
+
+button {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+p {
+    color: var(--p-color);
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+h1, 
+h2,
+h3{
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    margin: 5px;
+}
+
+a:hover {
+    color: rgb(38, 186, 164);
+}
+
+/* End General Rules */
+
+/* Start Framework */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* gap: 70px; */
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.btn-green {
+    background-color: rgb(38, 186, 164);
+    box-shadow: 0 3px 10px rgba(38, 186, 164, 0.5);
+}
+
+.btn-viollet {
+    background-color: rgb(97, 115, 255);
+    box-shadow: 0 3px 10px rgba(97, 115, 255, 0.5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* End Framework */
+
+/* Start Header */
+
+header {
+    background-image: url("../images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+header .container {
+    flex-direction: column;
+    width: var(--cont-width-main);
+}
+
+header .container img {
+    width: 80px;
+    margin: 40px 0;
+}
+
+header .container .flex {
+    margin-top: 20px;
+}
+
+
+/* end Header */
+
+/* Start Text */
+
+.text .container {
+    width: var(--cont-width-main);
+    margin-bottom: 30px;
+}
+
+/* End Text */
+
+/* Start Features */
+
+.features .container {
+    position: relative;
+}
+
+.features img {
+    width: 450px;
+}
+
+.features .container > div {
+    width: 80%;
+}
+.features .container > div div {
+    margin-bottom: 30px;
+}
+
+.features h3 {
+    margin: 0;
+}
+
+.features p {
+    margin-top: 5px;
+}
+/* End Features */
+
+/* Start Devices */
+.devices .container img {
+    width: 70%;
+    margin: auto;
+}
+
+/* End Devices */
+
+/* Start Properties */
+
+.properties .container {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.properties .container div:nth-of-type(2) img {
+    margin-bottom: 8px;
+}
+
+.properties .container div:last-of-type img {
+    margin-bottom: 7px;
+}
+
+/* End Properties */
+
+/* Start Companies */
+
+.companies {
+    margin: 100px auto;
+}
+
+.companies .container {
+    grid-template-columns: repeat(5, minmax(15%, 1fr));
+    gap: 20px;
+}
+
+/* End Companies */
+
+/* Start Footer */
+footer {
+    background-color: #eee;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+footer .container  {
+    justify-content: space-between;
+}
+
+footer .container > img {
+    width: 30px;
+}
+
+footer .container .links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 50px;
+}
+
+/* End Footer */
+
+/* For Tablets and Under */
+@media (max-width: 991px) {
+    .features .container {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .features .container img {
+        justify-self: center;
+        right: 0;
+        margin-bottom: 20px;
+    }
+
+    .features .container > div {
+        justify-self: center;
+        text-align: center;
+    }
+    .companies .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-content: center;
+    }
+    .companies .container img {
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Start Mobile */
+@media (max-width: 767px) {
+    :root{
+        --cont-width-main: auto;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .properties .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    button + button {
+        margin-top: 20px;
+    }
+
+    footer .flex-m {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+    footer .flex-m a {
+        margin: 10px 0;
+    }
+
+    .features img {
+        width: 300px;
+    }
+
+    .devices .container img {
+        width: 100%;
+    }
+
+}
+
+/* Endt Mobile */
+
+.me {
+    color:rgb(97, 115, 255);
+    font-weight: bold;
+}
+
